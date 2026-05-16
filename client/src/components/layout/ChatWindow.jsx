@@ -62,7 +62,14 @@ function ChatWindow() {
   : onlineUsers.includes(activeChat.id)
   ? "Online"
   : chatData?.lastSeen
-  ? `Last seen ${new Date(chatData.lastSeen).toLocaleString()}`
+  ? `Last seen ${new Date(chatData.lastSeen).toLocaleString([], {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true
+})}`
   : "Offline";
 
   return (
