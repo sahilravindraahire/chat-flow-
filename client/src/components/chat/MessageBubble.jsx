@@ -8,7 +8,11 @@ function MessageBubble({msg}) {
   const isMine = msg.senderId?._id === user?._id || msg.senderId === user?._id;
  
   const sender = msg.senderId;
-  const time = new Date(msg.createdAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  const time = new Date(msg.createdAt).toLocaleTimeString([], { 
+    hour: "2-digit", 
+    minute: "2-digit",
+    hour12: true    
+})
 
   return (
     <div className={`flex gap-2 group ${isMine ? "flex-row-reverse" : "flex-row"}`}>

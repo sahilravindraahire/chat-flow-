@@ -11,7 +11,12 @@ function GroupMessageBubble({msg}) {
   const isAdmin = activeGroup?.admin?._id === user?._id;
   const canDelete = isMine || isAdmin;
  
-  const time = new Date(msg.createdAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  const time = new Date(msg.createdAt).toLocaleTimeString([], { 
+    hour: "2-digit", 
+    minute: "2-digit",
+    hour12: true   
+})
+
 
   return (
     <div className={`flex gap-2 group ${isMine ? "flex-row-reverse" : "flex-row"}`}>
