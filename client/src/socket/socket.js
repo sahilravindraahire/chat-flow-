@@ -5,7 +5,7 @@ let socket = null
 export const connectSocket = (userId) => {
     if(socket?.connected) return socket
 
-    socket = io("http://localhost:5000", {
+    socket = io(import.meta.env.VITE_SOCKET_URL, {
         query: {userId},
         withCredentials: true
     })
