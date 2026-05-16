@@ -5,7 +5,7 @@ let socket = null
 export const connectSocket = (userId) => {
     if(socket?.connected) return socket
 
-    socket = io(import.meta.env.VITE_SOCKET_URL, {
+    socket = io("https://chat-flow-plxu.onrender.com", {
         query: {userId},
         withCredentials: true
     })
