@@ -1,3 +1,6 @@
+import dotenv from "dotenv"
+dotenv.config()
+
 import { app, server } from "../src/socket/socket.js";
 import { dbConnection } from "../src/db/dataBase.js";
 import cors from "cors";
